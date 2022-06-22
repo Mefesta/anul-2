@@ -1,0 +1,62 @@
+diagrama de clasa
+
+diagramele de clasa- un tip de diagrama utilizata pentru descrierea staturii statice ,
+adica a intitatilor sau a claselor existente intrun sistem.
+diagrama de clasa este utilizata de catre dezvoltatori pentru specificarea claselor ,
+dar poate fi foarte utila pentru specificarea structurii unor sisteme sau subsisteme dintrun biznes real.
+diagramele de clasa arata relatiile dintre clase de tipul: 
+1. la mostenire
+2. agregare
+3. asociere
+precum si operatiile, atribute fiecaruia. 	
+Clasa are instante sau realizari.
+aceste instante sunt obiectele clasei, prin conceptul de clasa se descrie structura 
+si comportarea obiectelor clase.
+structura contine atributele fiecarui obiect din clase.
+
+
+
+O clasa este reprezentata dintrun dreptunghi din 3 compartimente:
+In cel de sus : numele clasei;
+mijloc: atributele;
+jos : operatiile specifice clasei;
+
+Mostenirea(---|>): este o relatie care indica faptul ca o clasa mosteneste caracteristicele unei clase parinte.
+Asocierea(------): este o relatie generica intre 2 clase, aceste relatii pot fi de tipul 1:1, 1:la multi ,
+ multi:la multi;
+Dependenta(- - - ->): atunci cind o clasa depinde de alta clasa in sensul cind utilizeaza acea clasa ca atribut 
+al sau se foloseste relatia de dependenta;
+
+Agregarea(<>--): indica o relatie de tip intreg parte, se poate spune de clasa parinte ca are clasa de tip copil, 
+in aceasta relatie clasa copil poate exista si fara clasa parinte.
+Compozitia(<colorat>---): acesta relatie deriva din agregare ,dar se utilizeaza 
+atunci cind o clasa copil nu poate exista decit in cazul existentei clasei parinti.
+
+Vizibilitate pentru a specifica vizibilitatea unui atribut/metoda/operatiuni vom utiliza inaintea acestora urmatoarele notatii:
+public(+)
+privat(-)
+protezat(#)
+
+Un tip special de asociere este indicat printr-o clasa de asociere, ca si clasele asocierile pot avea atribute si operatii.
+pentru a arata grafic acest lucru , o clasa de asociere se conecteaza printro linie intrerupta, astfel spus relatia in sens este o clasa.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
