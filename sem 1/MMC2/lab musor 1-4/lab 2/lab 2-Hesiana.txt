@@ -1,0 +1,140 @@
+#include <iostream>
+#include <math.h>
+
+#define N 5
+#define EPSILON 10E-5
+
+using namespace std;
+
+double main_function(double x, double y)
+{
+return 7 * pow(x, 2) + 2 * x * y + 3 *pow(y, 2) - 3 * x - 7 * y;
+}
+
+double magnitude(double x, double y)
+{
+return sqrt(pow(x, 2) + pow(y, 2));
+}
+double scalar_multiplication(double x1, double x2, double y1, double y2)
+
+{
+return x1 * y1 + x2 * y2;
+
+}
+
+double matrix_multiplication(double x, double y, double r)
+{
+
+double matrix[N][N] = {{14, 2},
+                       {2, 6}};
+
+if(r == 1)
+return matrix[0][0] * x + matrix[0][1] * y;
+
+if(r == 2) {
+return matrix[1][0] * x + matrix[1][1] * y;
+} else 
+return 0;
+}
+
+double ALFA(double a, double b, double c, double d)
+
+{
+double top = scalar_multiplication(a, b, c, d);
+
+double bottom = scalar_multiplication(matrix_multiplication(c, d, 1), matrix_multiplication(c, d, 2), c, d);
+return (-1) * (top / bottom);
+}
+
+
+int main()
+
+{
+int k;
+
+double x0, y0, gradientulX, gradientulY, Z1, Z2; double d1, d2, g1, g2, alpha;
+
+x0 = 7;
+
+y0 = 3;
+
+gradientulX = 14 * x0 + 2 * y0 - 3;
+gradientulY = 2 * x0 + 6 * y0 - 7;
+
+if(gradientulX == 0 && gradientulY == 0)
+
+{
+cout << "\tx = " << x0 << endl;
+
+cout << "\ty = " << y0 << endl <<endl;
+return 0;
+
+}
+
+d1 = -1 * gradientulX;
+d2 = -1 * gradientulY;
+
+k = 0;
+cout << "d1 = " << d1 << endl;
+
+cout << "d2 = " << d2 << endl << endl;
+
+alpha = ALFA(gradientulX, gradientulY, d1, d2); cout << "Alpha(" << k << "): " << alpha << endl;
+cout << "Iteration: " << k << endl << endl;
+
+Z1 = x0 + alpha * d1;
+
+Z2 = y0 + alpha * d2;
+g1 = 14 * Z1 + 2 * Z2 - 3;
+
+g2 = 2 * Z1 + 6 * Z2 - 7;;
+
+cout << "Gradientui X = " << gradientulX << endl;
+ 
+cout << "Gradientul Y = " << gradientulY << endl ;
+
+
+
+cout << "Initial magnitude = " << magnitude(gradientulX, gradientulY) << endl << endl;
+
+while(magnitude(g1, g2) > EPSILON)
+
+{
+++k;
+
+cout << "Iteratia: " << k << endl;
+
+d1 = (-1 * g1) + pow(magnitude(g1, g2), 2) / pow(magnitude(gradientulX, gradientulY), 2) * d1;
+
+d2 = (-1 * g2) + pow(magnitude(g1, g2), 2) / pow(magnitude(gradientulX, gradientulY), 2) * d2;
+cout << "d1 = " << d1 << endl;
+cout << "d2 = " << d2 << endl;
+
+alpha = ALFA(g1, g2, d1, d2);
+cout << endl;
+
+cout << "Alpha(" << k << "): " << alpha << endl;
+
+Z1 = Z1 + alpha * d1;
+Z2 = Z2 + alpha * d2;
+cout << "Z1 = " << Z1 << endl;
+cout << "Z2 = " << Z2 << endl;
+
+gradientulX = g1;
+
+gradientulY = g2;
+g1 = 14 * Z1 + 2 * Z2 - 3;
+
+g2 = 2 * Z1 + 6 * Z2 - 7;;
+cout << "Final magnitude: " << magnitude(g1, g2) << endl << endl;
+cout << "x = " << Z1 << endl;
+cout << "y = " << Z2 << endl;
+
+cout << "f(x, y) = " << main_function(Z1, Z2) << endl;
+
+}
+
+
+
+return 0;
+}
