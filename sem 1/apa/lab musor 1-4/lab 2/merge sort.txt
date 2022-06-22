@@ -1,0 +1,81 @@
+#include<conio.h>
+#include<iostream> 
+#include<time.h>
+
+using namespace std;
+
+const int n = 100;
+int tab[n];
+int it;
+//MergeSort
+void MS( int aux1,int aux2,int aux3, int aux4)
+{
+int i, j;
+for (j = aux1;j <= aux2;j++)
+for (i = aux3;i <= aux4;i++)
+if (tab[i]<tab[j])
+{
+tab[i] += tab[j];
+tab[j] = tab[i] -
+tab[j];
+tab[i] -= tab[j];
+it = i + j;
+}
+}
+void AF(int tab[], int size)
+{
+int i;
+for (i = 0; i < size; i++)
+{
+cout << tab[i] << ' ';
+}
+cout << "\n\n";
+}
+void insert(int i, int j)
+{
+if (tab[i]>tab[j])
+{
+tab[i] += tab[j];
+tab[j] = tab[i] - tab[j];
+tab[i] -= tab[j];
+}
+}
+int MergeSort(int i, int j)
+{
+if (j - i <= 1)insert(i, j);
+else
+{
+MergeSort(i, (i + j) / 2); 
+MergeSort(1 + (i + j) / 2, j); 
+MS(i, (i + j) / 2, 1 + (i + j) / 2, j);
+}
+return 0;
+}
+int main()
+{
+int initialTablou[10000];
+int n;
+cout << "Dati n:",
+cin>>n; 
+cout << "\n";
+rand();
+int marime = n;
+for (int i = 0;i < marime; i++)
+tab[i] = rand() % 1000 - 100;
+cout << "Tabloul nesortat:" << endl;
+AF(tab, marime);
+{
+clock_t start, end;\
+start = clock();
+for (int i = 0; i < n; i++)
+MergeSort(0, n - 1);
+start = clock();
+cout << "Tabloul sortat prinmetoda MergeSort este:" << endl;
+MergeSort(0, n - 1);
+AF(tab, marime);
+printf("Timpul de executie alalgoritmului MergeSort este: %.8f\n", ((double)(clock() - start)) / CLOCKS_PER_SEC);
+cout << "Numarul de iteratii: "<<it << endl;
+}
+getch();
+return 0;
+}

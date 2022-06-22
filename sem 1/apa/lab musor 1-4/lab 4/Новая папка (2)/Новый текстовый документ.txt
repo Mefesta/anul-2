@@ -1,0 +1,359 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+
+#define max 1000
+#define INF 99999999
+
+using namespace std;
+unsigned long long MS[max][max], MV[max][max], MVdij[max][max], MVfloid[max][max], n, parent[max], visited[max], path[max], disvec[max][max];
+int count1 = 0, count2 = 0, tmpi, u, possition = 0, start, finish; void RESET() {
+count1 = 0;
+count2 = 0;
+for (int i = 0; i<n; i++) {
+
+parent[i] = 0;
+visited[i] = 0;
+for (int j = 0; j<n; j++) {
+
+MVdij[i][j] = MV[i][j];
+MVfloid[i][j] = MV[i][j];
+}
+}
+}
+
+void nr_virf_defavorabil() {
+int j;
+cout << "Nr. de varfuri: ";
+cin >> n;
+cout << "Matricea de adiacenta\n";
+for (int i = 0; i < n; i++) {
+for (int j = 0; j < n; j++)
+if (j > i) {
+MS[i][j] = rand() % 1000;}
+else if (i > j) {
+
+MS[i][j] = MS[j][i];}}}
+void costurile_defavorabil() {
+    cout << "Costurile muchiilor \n";
+for (int i = 0; i<n; i++) {
+for (int j = 0; j<n; j++) {
+if (MS[i][j] && i != j) {
+cout << i + 1 << " -> " << j + 1 << " : " << MS[i][j]<< endl;
+MV[i][j] = MS[i][j];}
+ 
+else
+
+MV[i][j] = INF;}
+}
+RESET();
+}
+void nr_virf_favorabil() {
+
+cout << "Nr. de varfuri: ";
+cin >> n;
+cout << "Matricea de adiacenta\n";
+for (int i = 0; i<n; i++) {
+for (int j = 0; j<n; j++)
+
+MS[i][i + 1] = rand() % 1000;
+}
+}
+void costurile_favorabil() {
+    cout << "Costurile muchiilor \n";
+for (int i = 0; i<n; i++) {
+for (int j = 0; j<n; j++) {
+
+if (MS[i][j] && i != j) {
+    cout << i + 1 << " -> " << j + 1 << " : " << MS[i][j]<< endl;//
+MV[i][j] = MS[i][j];}
+else
+
+MV[i][j] = INF;
+}
+}
+RESET();}
+
+void nr_virf_mediu() {
+
+cout << "Nr. de virfuri: ";
+cin >> n;
+cout << "Introduceti matricea de adiacenta\n";
+for (int i = 0; i < n; i++) {
+for (int j = 0; j < n; j++)
+if (i % 2 == 0 && j % 2 == 0) {
+
+j = j + 1;
+MS[i][j] = rand() % 1000;
+}
+else if (i % 2 != 0 && j % 2 != 0) {
+
+j = j + 1;
+MS[i][j] = rand() % 1000;
+}
+else if (i > j) {
+
+MS[i][j] = MS[j][i];
+}
+}
+}
+ 
+void costurile_mediu() {
+    cout << "Costurile muchiilor \n";
+for (int i = 0; i<n; i++) {
+for (int j = 0; j<n; j++) {
+
+if (MS[i][j] && i != j) {
+cout << i + 1	<< " -> " << j + 1	<< " : " << MS[i][j] <<endl;
+MV[i][j] = MS[i][j];
+}
+else
+
+MV[i][j] = INF;
+}
+}
+RESET();
+}
+void DIJKSTRA() {
+int distance[max],disvec[max][max],visited[max];
+
+cout << "Introduceti 2 varfuri (de la - pana la): " << endl; 
+cout << "Din "; 
+cin >> start;
+cout << "In "; 
+cin >> finish; 
+for (int ji = 0; ji < n; ji++) {
+
+for (int i = 0; i < n; i++) {
+
+distance[i] = INF;
+visited[i] = 0;
+}
+
+distance[start - 1] = 0;
+int st = 0;
+for (int i = 0; i < n; i++) {
+
+disvec[st][i] = distance[i];
+}
+for (int i = 0; i < n - 1; i++) {
+int min = INF;
+for (int i = 0; i < n; i++) {
+if (!visited[i] && distance[i] <= min) {
+
+min = distance[i];
+tmpi = i;
+count1++;
+}
+}
+u = tmpi;
+visited[u] = 1;
+for (int i = 0; i < n; i++) {
+if (!visited[i] && MVdij[u][i] && distance[u] != INF && distance[u] + MVdij[u] [i] < distance[i]) {
+distance[i] = distance[u] + MVdij[u][i];
+ 
+count1++;
+}
+}
+st++;
+for (int i = 0; i < n; i++) {
+
+disvec[st][i] = distance[i];
+count1++;
+}
+}
+
+int k = finish - 1;
+
+path[possition] = finish - 1;
+while (path[possition] != start - 1) {
+if (disvec[st][k] == disvec[st - 1][k]) {
+
+st--;
+}
+else {
+for (int j = 0; j < n; j++) {
+if (disvec[st][k] == disvec[st - 1][j] + MVdij[j][k]) { path[++possition] = j;
+k = j;
+st--;
+break;
+
+}
+}
+}
+}
+}
+cout<<"===========================================\n\n";
+cout << "Drumul minin de la " << start << " pina la " << finish << " este " << distance[finish - 1] << "." << endl;
+cout << "Nr. de iteratii: " << count1 << endl;
+
+}
+void FLOYD() {
+
+int start, finish;
+cout << "Introduceti 2 varfuri p/u aflarea drumului minim: " << endl;
+cout << "Din ";
+cin >> start; 
+cout << "In "; 
+cin >> finish;
+for (int k = 0; k<n; k++)
+for (int i = 0; i<n; i++)
+for (int j = 0; j<n; j++) {
+
+count2++;
+ 
+if (MVfloid[i][k] && MVfloid[k][j] && i != j)
+if (MVfloid[i][k] + MVfloid[k][j]<MVfloid[i][j] || MVfloid[i][j] == 0) { MVfloid[i][j] = MVfloid[i][k] + MVfloid[k][j];
+count2++;
+}
+}
+cout<<"=========================================\n\n";
+cout << "Drumul minim de la " << start << " pina la " << finish << " este " << MVfloid[start - 1][finish - 1] << "." << endl;
+cout << "Nr. de iteratii: " << count2 << endl;
+}
+
+int main() {
+double t1, t2;
+int ChooseMenu;
+int x;
+x:	while (true) {
+
+cout << "1. Caz FAVORABIL" << endl
+<<	"2. Caz MEDIU" << endl
+<<	"3. Caz DEFAVORABIL" << endl
+<<	"0. Iesire" << endl; cout<<"===========================================\n"; cout << endl << "Optiunea aleasa: ";
+
+cin >> ChooseMenu; switch (ChooseMenu) { case 1: {
+
+while (true) {
+
+cout << "1. Introdu nr. de varfuri" << endl
+<<	"2. Algoritmul FLOYD" << endl
+<<	"3. Algoritmul DIJKSTRA" << endl
+<<	"0. Main menu" << endl; cout<<"===========================================\n"; cout << endl << "Optiunea aleasa: ";
+
+cin >> ChooseMenu; switch (ChooseMenu) { case 1: {
+nr_virf_favorabil(); costurile_favorabil(); break;
+}
+case 2: {
+
+t1 = clock();
+ 
+FLOYD();
+t2 = clock();
+cout << "Timpul de functionare: " << fixed << (t2 - t1) / CLOCKS_PER_SEC <<
+"	sec" << endl; cout<<"===========================================\n"; break;
+}
+
+case 3: {
+
+t1 = clock();
+DIJKSTRA();
+t2 = clock();
+cout << "Timpul de functionare: " << fixed << (t2 - t1) / CLOCKS_PER_SEC <<
+"	sec" << endl; cout<<"===========================================\n";
+
+break;
+}
+case 0: {
+RESET();
+goto x;
+}
+default: {
+cout << "EROARE" << endl;
+break;
+
+}
+}
+}
+case 2: {
+while (true) {
+
+cout << "1. Introdu nr. de varfuri" << endl
+<<	"2. Algoritmul FLOYD" << endl
+<<	"3. Algoritmul DIJKSTRA" << endl
+<<	"0. Main menu" << endl; cout<<"===========================================\n"; cout << endl << "Optiunea aleasa: ";
+
+cin >> ChooseMenu; switch (ChooseMenu) { case 1: {
+nr_virf_mediu(); costurile_mediu(); break;
+
+}
+case 2: {
+ 
+t1 = clock();
+FLOYD();
+t2 = clock();
+cout << "Timpul de fucntionare: " << fixed << (t2 - t1) / CLOCKS_PER_SEC <<
+"	sec" << endl; cout<<"===========================================\n";
+
+break;
+}
+case 3: {
+
+t1 = clock();
+DIJKSTRA();
+t2 = clock();
+cout << "Timpul de functionare: " << fixed << (t2 - t1) / CLOCKS_PER_SEC <<
+"	sec" << endl; break;
+}
+case 0: {
+RESET();
+goto x;
+}
+default: {
+cout << "EROARE" << endl;
+break;
+
+}
+}
+}
+case 3: {
+while (true) {
+
+cout << "1. Introdu nr. de varfuri" << endl
+<<	"2. Algoritmul FLOYD" << endl
+<<	"3. Algoritmul DIJKSTRA" << endl
+<<	"0. Main menu" << endl; cout<<"===========================================\n"; cout << endl << "Optiunea aleasa: ";
+
+cin >> ChooseMenu; switch (ChooseMenu) { case 1: {
+nr_virf_defavorabil(); costurile_defavorabil(); break;
+
+}
+case 2: {
+ 
+t1 = clock();
+FLOYD();
+t2 = clock();
+cout << "Timpul functionare: " << fixed << (t2 - t1) / CLOCKS_PER_SEC << " sec" << endl;
+break;
+}
+case 3: {
+
+t1 = clock();
+DIJKSTRA();
+t2 = clock();
+cout << "Timpul de functionare: " << fixed << (t2 - t1) / CLOCKS_PER_SEC <<
+"	sec" << endl; break;
+}
+case 0: {
+RESET();
+goto x;
+}
+default: {
+cout << "EROARE" << endl;
+break;
+
+}
+}
+
+}
+case 0: {
+return 0;
+}
+default: {
+cout << "EROARE" << endl;
+break;
+
+}}}}}}}
+ 

@@ -1,0 +1,312 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#define max 10000
+using namespace std;
+
+int MS[max ][max ], MV[max][max], MVprim[max][max], MVkruskal[max][max], n; const int INF = 10000;
+int count1 = 0, count2 = 0;
+int parent[max] = { 0 }, visited[max] = { 0 }; void RESET() {
+count1 = 0;
+count2 = 0;
+for (int i = 0; i < n; i++) {
+parent[i] = 0;
+visited[i] = 0;
+for (int j = 0; j < n; j++) {
+MVprim[i][j] = MV[i][j];
+MVkruskal[i + 1][j + 1] = MV[i][j];
+}
+}
+}
+void nr_virf_defavorabil() {
+int j;
+cout << "Numarul de virfuri: ";
+cin >> n;
+for (int i = 0; i < n; i++) {
+for (int j = 0; j < n; j++) {
+//cin >> MS[i][j]; if (j > i) {
+MS[i][j] = rand() % 10000;
+}
+if (i > j) { MS[i][j] = MS[j][i];}
+}
+}
+void costurile_defavorabil() {
+cout << "Costurile muchiilor \n";
+for (int i = 0; i < n; i++) {
+for (int j = 0; j < n; j++) {
+if (MS[i][j] && i != j) {
+cout << i + 1 << " -> " << j + 1 << " : " << MS[i][j]<< endl;//
+MV[i][j] = MS[i][j];
+}
+else
+MV[i][j] = INF;
+}
+}
+RESET();
+}
+
+void nr_virf_favorabil() {
+cout << "Numarul de virfuri: ";
+cin >> n;
+cout << "Matricea de adiacenta\n";
+for (int i = 0; i < n; i++) {
+for (int j = 0; j < n; j++) {
+//cin >> MS[i][j]; //de la tastatura
+
+MS[i][i + 1] = rand() % 1000;
+}
+
+}
+}
+
+void costurile_favorabil() {
+cout << "Costurile muchiilor \n";
+for (int i = 0; i < n; i++) {
+for (int j = 0; j < n; j++) {
+
+if (MS[i][j] && i != j) {
+cout << i + 1 << " -> " << j + 1 << " : " << MS[i][j]<< endl;//
+MV[i][j] = MS[i][j];
+}
+else
+MV[i][j] = INF;
+}
+}
+RESET();
+}
+
+void nr_virf_mediu() {
+cout << "Numarul de virfuri: ";
+cin >> n;
+cout << "Introduceti matricea de adiacenta\n"; for (int i = 0; i < n; i++) {
+for (int j = 0; j < n; j++) {
+//cin >> MS[i][j];
+if (i % 2 == 0 && j % 2 == 0) {
+j = j + 1;
+MS[i][j] = rand() % 1000;
+}
+else if (i % 2 != 0 && j % 2 != 0) {
+j = j + 1;
+MS[i][j] = rand() % 1000;
+}
+else if (i > j) {
+MS[i][j] = MS[j][i];
+}
+}
+}
+}
+void costurile_mediu() {
+cout << "Costurile muchiilor \n";
+for (int i = 0; i < n; i++) {
+for (int j = 0; j < n; j++) {
+if (MS[i][j] && i != j) {
+cout << i + 1	<< " -> " << j + 1	<< " : " << MS[i][j] <<
+endl;
+MV[i][j] = MS[i][j];
+}
+else
+MV[i][j] = INF;
+}
+}
+RESET();
+}
+int FIND(int i) {
+while (parent[i]) {
+i	= parent[i]; count2++;
+}
+
+return i;
+}
+bool UNION(int i, int j) {
+count2++;
+if (i != j) {
+parent[j] = i;
+
+return true;
+}
+return false;
+}
+
+void PRIM() {
+
+int a, b, u, v, ne = 1, min,costul;;
+visited[0] = 1;
+cout << "Algoritmul lui Prim " << endl << endl; while (ne < n) {
+count1++;
+min = INF;
+for (int i = 0; i < n; i++)
+for (int j = 0; j < n; j++)
+if (MVprim[i][j] < min)
+if (visited[i] != 0) {
+count1++;
+min = MVprim[i][j];
+a = u = i;
+b = v = j;
+}
+if (visited[u] == 0 || visited[v] == 0) {
+cout << "Muchia " << ne++ << ":	" << a+1 << " -> " << b+1 <<",costul= "  << min << endl;
+visited[b] = 1;
+}
+MVprim[a][b] = MVprim[b][a] = INF;
+}
+cout << endl << "Nr. Iteratii : " << count1 << endl;
+}
+
+void KRUSKAL() {
+int a, b, u, v, ne = 1, min;
+cout << "Algoritmul Kruskal" << endl << endl; while (ne < n) {
+count2++;
+min = INF;
+for (int i = 1; i <= n; i++) {
+for (int j = 1; j <= n; j++) {
+if (MVkruskal[i][j] < min) {
+count1++;
+min = MVkruskal[i][j];
+a = u = i;
+b = v = j;
+}
+}
+
+}
+u = FIND(u);
+v = FIND(v);
+if (UNION(u, v)) {
+cout << "Muchia " << ne++ << ": " << a << " -> " << b << ", costul = " << min << endl;
+}
+MVkruskal[a][b] = MVkruskal[b][a] = INF;
+}
+cout << endl << "Nr. Iteratii : " << count2 << endl;
+}
+int main() {
+double t1, t2;
+int ChooseMenu;
+int x;
+x:	while (true) { 
+cout << "1. Cazul favorabil." << endl
+     <<	"2. Cazul mediu." << endl
+     <<	"3. Cazul defavorabil." << endl
+     <<	"0. Stop Program." << endl; 
+cout << endl << "Raspuns : ";
+cin >> ChooseMenu; 
+switch (ChooseMenu) { case 1: {
+
+while (true) {
+cout << "1. Introduceti numarul de virfuri." << endl
+     <<	"2. Algoritmul Prim." << endl
+     <<	"3. Algoritmul Kruskal." << endl
+     <<	"0. Meniul principal." << endl; 
+cout << endl << "Raspuns : ";
+cin >> ChooseMenu; 
+switch (ChooseMenu) { case 1: {
+nr_virf_favorabil(); costurile_favorabil(); break;
+}
+case 2: {
+t1 = clock();
+PRIM();
+t2 = clock();
+cout << "Timpul de executie : " << fixed << (t2 - t1) / CLOCKS_PER_SEC << " sec" << endl;
+break;
+}
+
+case 3: {
+t1 = clock();
+KRUSKAL();
+t2 = clock();
+cout << "Timpul de executie : " << fixed << (t2 - t1) / CLOCKS_PER_SEC << " sec" << endl;
+break;
+}
+
+case 0: {
+goto x;
+
+}
+default: {
+cout << "ERORR!" << endl;
+break;
+}
+}
+}
+case 2: {
+while (true) {
+cout << "1-> Introduceti numarul de virfuri." << endl
+     <<	"2 -> Algoritmul Prim." << endl
+     <<	"3-> Algoritmul Kruskal." << endl
+     <<	"0-> Meniul principal." << endl; 
+cout << endl << "Raspuns : ";
+
+cin >> ChooseMenu; 
+switch (ChooseMenu) { case 1: {
+nr_virf_mediu(); costurile_mediu(); break;
+}
+case 2: {
+t1 = clock(); PRIM();
+t2 = clock();
+cout << "Timpul de executie : " << fixed << (t2 - t1) /
+CLOCKS_PER_SEC << " sec" << endl;
+break;
+}
+case 3: {
+t1 = clock();
+KRUSKAL();
+t2 = clock();
+cout << "Timpul de executie : " << fixed << (t2 - t1) / CLOCKS_PER_SEC << " sec" << endl;
+break;
+}
+case 0: {
+goto x;
+}
+default: {
+cout << "ERORR!" << endl;
+break;
+}
+}
+}
+case 3: {
+while (true) {
+cout << "1. Introduceti numarul de virfuri." << endl
+     <<	"2. Algoritmul Prim." << endl
+     <<	"3. Algoritmul Kruskal." << endl
+     <<	"0. Meniul principal." << endl; 
+cout << endl << "Raspuns : ";
+cin >> ChooseMenu; 
+
+switch (ChooseMenu) { case 1: {
+nr_virf_defavorabil(); costurile_defavorabil(); break;
+}
+case 2: {
+t1 = clock(); PRIM();
+t2 = clock();
+cout << "Timpul de executie : " << fixed << (t2 - t1) /CLOCKS_PER_SEC << " sec" << endl;
+break;
+}
+case 3: {
+t1 = clock();
+KRUSKAL();
+t2 = clock();
+cout << "Timpul de executie : " << fixed << (t2 - t1) / CLOCKS_PER_SEC << " sec" << endl;
+break;
+}
+case 0: {
+goto x;
+}
+default: {
+cout << "ERORR!" << endl;
+break;
+}
+}
+}
+case 0: {
+return 0;
+}
+default: {
+cout << "ERORR" << endl;
+break;
+}
+}
+}
+}
+}
+}
+return 0;
+}
+

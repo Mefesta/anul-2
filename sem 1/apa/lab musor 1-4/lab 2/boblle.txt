@@ -1,0 +1,61 @@
+#include<conio.h>
+
+#include<iostream>
+#include<time.h>
+#include <vector>
+
+using namespace std;
+
+int it;
+const int n = 100;
+int tab[n];
+void bubble_sort(int iarr[], int num) { int i, j=0, k, temp;
+bool swapped = true;
+while (swapped) {
+swapped = false;
+j++;
+for (i = 0; i < num-j; i++) {
+if (iarr[i] > iarr[i + 1]) {
+temp = iarr[i];
+iarr[i] = iarr[i + 1];
+iarr[i + 1] = temp;
+swapped = true;
+}
+}
+}
+cout << endl;
+it = ((i)*(j));
+}
+void AfisareTablou(int iarr[], int size)
+{
+int i;
+for (i = 0; i < size; i++)
+{
+cout << iarr[i] << ' ';
+}
+cout << "\n\n";
+}
+int main()
+{
+int initialTablou[1000];
+int n;
+cout << "Dati n:",
+cin>>n; 
+cout << "\n";
+rand();
+int marime = n;
+for (int i = 0;i < marime; i++)
+tab[i] = rand() % 1000 - 100;
+cout << "Tabloul nesortat:" << endl; 
+AfisareTablou(tab, marime);
+clock_t start, end;
+start = clock();
+bubble_sort(tab , marime );
+cout << "Tabloul sortat prin metoda bubble sort este:" << endl;
+AfisareTablou(tab, marime);
+printf("\nTimpul de executie al algoritmului bubble sort este:: %.8f ", ((double)(clock() - start)) / CLOCKS_PER_SEC);
+end = clock();
+cout << "\nNumarul de iteratii : " << it <<endl;
+return 0;
+getch();	
+}

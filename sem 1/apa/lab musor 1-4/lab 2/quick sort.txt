@@ -1,0 +1,75 @@
+#include<conio.h>
+#include<iostream>
+#include<time.h>
+#include <vector>
+using namespace std;
+int it;
+const int n = 1000;
+int tab[n];
+// Quicksort .
+int partition(int InitialTablou[], int top, int bottom)
+{
+int x = InitialTablou[top];
+int i = top - 1;
+int j = bottom + 1;
+int temp;
+do
+{
+do
+{
+j--;
+} while (x < InitialTablou[j]);
+do
+{
+i++;
+} while (x > InitialTablou[i]);
+if (i < j)
+{
+temp = InitialTablou[i];
+InitialTablou[i] =InitialTablou[j];
+InitialTablou[j] = temp;
+}
+} while (i < j); it = i + j; return j;
+}
+void quicksort(int InitialTablou[], int top, int bottom)
+{
+int middle;
+if (top < bottom)
+{
+middle = partition(InitialTablou, top,bottom);
+quicksort(InitialTablou, top, middle); quicksort(InitialTablou, middle + 1,bottom);
+}
+}
+void AfisareTablou(int InitialTablou[], int size)
+{
+int i;
+for (i = 0; i < size; i++)
+{
+cout << InitialTablou[i] << ' ';
+}
+cout << "\n\n";
+}
+int main()
+{
+int initialTablou[1000];
+int n;
+cout << "Dati n:",
+cin>>n; 
+cout << "\n";
+rand();
+int marime = n;
+for (int i = 0;i < marime; i++)
+tab[i] = rand() % 1000 - 100;
+cout << "Tabloul nesortat:"<<	endl;
+AfisareTablou(tab, marime);
+clock_t start, end;
+start = clock();
+quicksort(tab, 0,marime-1);
+cout << "Tabloul sortat prinmetoda quiksort este:" << endl;
+AfisareTablou(tab, marime );
+printf("\nTimpul de executieal algoritmului Quicksort este:: %.8f ", ((double) (clock() - start)) / CLOCKS_PER_SEC);
+end = clock();
+cout<<"\nNumarul de iteratii :"	<<it<< endl;
+getch();
+return 0;
+}
