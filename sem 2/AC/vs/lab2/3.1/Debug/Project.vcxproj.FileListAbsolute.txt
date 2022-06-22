@@ -1,0 +1,6 @@
+C:\Users\Duca\Desktop\Project32_VS2019\Debug\Project.exe
+T:\UTM\Anul II\Semestrul II\AC\Laborator 2\3.1\Debug\Project.exe
+C:\Users\Rusu\Desktop\Laborator 2\3.1\Debug\Project.exe
+C:\Users\Rusu\Desktop\UTM.A2.S3\UTM.A2.AC\lab2\First\Debug\Project.exe
+C:\Users\gabyb\Desktop\lab2\First\Debug\Project.exe
+C:\Users\gabyb\Desktop\lab2\3.1\Debug\Project.exe
