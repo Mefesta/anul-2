@@ -1,0 +1,12 @@
+C:\Users\Duca\Desktop\Project32_VS2019\Debug\Project.exe
+T:\UTM\Anul II\Semestrul II\AC\Laborator 2\3.1\Debug\Project.exe
+T:\UTM\Anul II\Semestrul II\AC\Laborator 2\3.1 - копия\Debug\Project.exe
+T:\UTM\Anul II\Semestrul II\AC\Laborator 2\3.2\Debug\Project.exe
+C:\Users\Rusu\Desktop\Laborator 2\3.2\Debug\Project.exe
+C:\Users\Rusu\Desktop\UTM.A2.S3\UTM.A2.AC\lab2\Second\Debug\Project.exe
+C:\Users\gabyb\Desktop\lab2\Second\Debug\Project.exe
+C:\Users\gabyb\Desktop\lab2\3.2\Debug\Project.exe
+C:\Users\gabyb\Desktop\lab 3\3.2\Debug\Project.exe
+C:\Users\gabyb\Desktop\AC\lab 4\exemplu 8\Debug\Project.exe
+C:\Users\gabyb\Desktop\lab 5\exemplu 2\Debug\Project.exe
+C:\Users\gabyb\Desktop\AC\lab 5\exemplu 1\Debug\Project.exe
