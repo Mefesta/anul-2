@@ -1,0 +1,5 @@
+﻿  WindowsProject1.cpp
+C:\Users\gabyb\Desktop\ppe\vs\lab 3\WindowsProject1\WindowsProject1\WindowsProject1.cpp(56,12): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+C:\Users\gabyb\Desktop\ppe\vs\lab 3\WindowsProject1\WindowsProject1\WindowsProject1.cpp(66,7): warning C4101: 'rect': unreferenced local variable
+C:\Users\gabyb\Desktop\ppe\vs\lab 3\WindowsProject1\WindowsProject1\WindowsProject1.cpp(15): warning C4717: 'mybezier': recursive on all control paths, function will cause runtime stack overflow
+  WindowsProject1.vcxproj -> C:\Users\gabyb\Desktop\ppe\vs\lab 3\WindowsProject1\x64\Debug\WindowsProject1.exe
