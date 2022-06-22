@@ -1,0 +1,169 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+double(*f)(double), (*fn)(double), (*fd)(double);
+double f1(double x) {
+return	2-x-log(x);
+}
+double f2(double x) {
+return x*x*x+29*x+34;
+}
+double fd1(double x)
+{
+return (x+1)/x;
+}
+double fd2(double x)
+{
+return 3*x*x+29;
+}
+double f3(double x) {
+return (x+1)/x;
+}
+double f4(double x) {
+return 3*x*x+29;
+}
+void Met_aproximatiei()
+{
+int k = 0;
+double x0, x1, eps = 0.000001;
+cout << "Introduceti valoarea initiala x0" << endl;
+cout << "x0= ";
+cin >> x0;
+while (1)
+{
+x1 = fn(x0);
+k++;
+if (abs(x1 - x0) < eps) {
+cout << "Radacina este: " << x0 << " Numarul de iteratii este " <<
+k << endl;
+break;
+}
+x0 = x1;
+}
+}
+void Met_injumatatirii() {
+int k = 0;
+double a, b, c = 0;
+double eps = 0.01;
+cout << "Introduceti intervalul a si b :	" << endl;
+cout << "a=";
+cin >> a;
+cout << "b=";
+cin >> b;
+while ((b - a) > eps)
+{
+k++;
+c = (a + b) / 2;
+if (f(c) == 0)
+break;
+if (f(a) * f(c) < 0)
+b = c;
+else
+a = c;
+}
+cout << "Radacina este: " << c << endl;
+cout << "Numarul de iteratii este : " << k;
+}
+void Met_Tangentelor() {
+int k = 0;
+double x0, x1, eps = 0.000001;
+cout << "Introduceti valoarea initiala x0" << endl;
+cout << "x0=";
+cin >> x0;
+while (1) {
+x1 = x0 - f(x0) / fd(x0);
+k++;
+if (abs(x1 - x0) < eps) {
+cout << "Radacina este: " << x0 << endl << "numarul de iteratii "
+<<	k << endl; break;
+}
+x0 = x1;
+}
+}
+void Met_Secantelor() {
+double x2, x1, x3 = 0, y, eps = 0.000001; int n = 0;
+cout << "Introduceti intervalul" << endl;
+cout << "a=";
+cin >> x1;
+cout << "b=";
+cin >> x2;
+do {
+n++;
+y = x3;
+x3 = x2 - (f(x2) * (x2 - x1) / (f(x2) - f(x1)));
+x1 = x2;
+x2 = x3;
+} while	(fabs(y - x3) >= eps);
+cout <<	"Radacina este: "	<< x3 << endl;
+cout <<	"Numarul de	iteratii: " << n << endl;
+}			
+void selectFunction() {		
+cout <<	"1. Functia	f1(x)	= 2^x+1" << endl;
+cout <<	"2. Functia	f2(x)	= x^3-14x-31" << endl;
+int opt;			
+do {			
+opt	= getchar();		
+} while	(opt < '1' || opt	< '2');
+switch (opt) {
+case'1': {
+f = f1;
+fn = f3;
+fd = fd1;
+break;
+}
+case'2': {
+f = f2;
+fn = f4;
+fd = fd2;
+break;
+}
+}
+}
+int meniu()
+{
+if (f == f1)
+     cout << "Functia f1(x)=2^x+1" << endl << endl;
+else cout << "Functia f2(x)=x^3-14x-31" << endl << endl;
+             cout << "1.Selecatarea functiei " << endl;
+             cout << "2.Metoda aproximatiei succesive - executia 10^(-6)" << endl; 
+             cout << "3.Metoda injumatatirii - executia 10^(-2)" << endl;
+             cout << "4.Metoda Tangentelor - executia 10^(-6)" << endl; 
+             cout << "5.Metoda Secantelor - executia 10^(-2)" << endl; cout << "6.Iesire" << endl;
+int opt;
+do {
+opt = getchar();
+} while (opt < '1' || opt>'6'); return opt - '0';
+}
+int main()
+{
+int opt;
+f = f1;
+fn = f3;
+fd = fd1;
+do {
+switch (opt = meniu()) {
+case 1: {
+selectFunction();
+break;
+}
+case 2: {
+Met_aproximatiei();
+break;
+}
+case 3: {
+Met_injumatatirii();
+break;
+}
+case 4: {
+Met_Tangentelor();
+break;
+}
+case 5: {
+Met_Secantelor();
+break;
+}
+}
+} while (opt != 6);
+}

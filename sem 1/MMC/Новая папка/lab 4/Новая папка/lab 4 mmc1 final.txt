@@ -1,0 +1,83 @@
+
+#include <iostream>
+#include <cmath>
+#include<iomanip>
+
+using namespace std;
+float f(float(x), float(y)){
+return	(pow(-y,2)*(log(x)+2)*log(x)+y)/x;		
+}					
+int main(){					
+int n,	i;				
+double	a,	b;			
+float h;				
+float k1[25], k2[25], k3[25], k4[25];	
+cout << "	Ecuatia dy/dx = (pow(-y,2)*(log(x)+2)*log(x)+y)/x"<< endl;
+cout << "	Introduceti intervalul:" << endl << " a = ";
+cin >>	a;				
+cout << "	b = ";			
+cin >>	b;				
+cout << "	Introduceti pasul: ";		
+cin >>	h;				
+n = (a+1- a) / h;			
+double	y[25], g[25], x[25], Y[25], L[25];	
+cout << "	Introduceti x0: ";		
+cin >>	x[0];			
+cout << "	Introduceti y0: ";		
+cin >>	y[0];			
+cout << "	--------------------------------------------		" << endl;
+cout << "	Metoda Euler " << endl;	
+cout << "	--------------------------------------------		" << endl;
+for (i	= 1; i <= n; i++) {		
+	x[i] = x[i - 1] + h;	}	
+					
+for (i	= 1; i <= n; i++){		
+	y[i] = y[i - 1] + (h*f(x[i - 1], y[i - 1]));
+}
+					
+cout << "	Iteratii	x	y	f(x,y)" << endl;
+for (i	= 1; i <= n; i++) {		
+	cout << "	" << i << "\t " << x[i] << "\t " << y[i] << "\t  " <<f(x[i], y[i]) << endl;			
+}					
+cout << "	--------------------------------------------		" << endl;
+cout << "	Metoda Cauchy " << endl;
+cout << "	--------------------------------------------		" << endl;
+for (i	= 1; i <= n; i++) {		
+	x[i] = x[i - 1] + h;		
+}				
+for (i	= 1; i <= n; i++){		
+	y[i] = y[i - 1] + (h*f(x[i - 1], y[i - 1]));
+	y[i] = y[i - 1] + ((h / 2)*(f(x[i - 1], y[i - 1]) + f(x[i],y[i])));
+					
+}					
+cout << "	Iteratii	x	y	f(x,y)" << endl;
+for (i	= 1; i <= n; i++) {		
+cout << "\t " << i << "\t " << x[i] << "\t " << y[i] << "\t " << f(x[i], y[i]) << endl;
+ 
+}
+cout << " --------------------------------------------" << endl;
+cout << " Metoda Runge-Kutta " << endl;
+cout << " --------------------------------------------" << endl;
+ cout<<"Iteratia\tx\t\ty\t\tf(x,y)\n";
+    for(int i=0; i<n; i++)
+    {
+        k1[i]=h*f(x[i],y[i]);
+        k2[i]=h*f(x[i]+h/2, y[i]+k1[i]/2);
+        k3[i]=h*f(x[i]+h/2, y[i]+k2[i]/2);
+        k4[i]=h*f(x[i]+h, y[i]+k3[i]);
+
+        y[i+1]= y[i]+ (k1[i]+2*k2[i]+2*k3[i]+k4[i])/6;
+
+        cout<<"\t"<<i+1<<" \t"<<x[i+1]<<" \t\t"<<y[i+1]<<" \t"<<f(x[i+1],y[i+1])<<endl;
+    }
+cout << " --------------------------------------------" << endl;
+cout << " Solutia exacta" << endl;
+cout << " --------------------------------------------" << endl;
+     cout<<"Iteratia\tx\t\ty\tf(x,y)\n";
+ for(int i=0; i<n; i++)
+   {
+       y[i+1]= x[i+1]/(1-x[i+1]*pow(log(x[i+1]),2));
+        cout<<"\t"<<i+1<<" \t"<<x[i+1]<<" \t"<<y[i+1]<<" \t"<<f(x[i+1],y[i+1])<<endl;
+    }
+return 0;
+}

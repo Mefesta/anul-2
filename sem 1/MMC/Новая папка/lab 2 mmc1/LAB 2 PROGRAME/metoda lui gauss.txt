@@ -1,0 +1,78 @@
+
+#include <iostream>
+#include<conio.h>
+#include<stdlib.h>
+
+using namespace std;
+float a[10][10],b[10],x[10],dp;
+int i,j,n,iv,t,k,l;
+float temp;
+
+int main()
+{
+
+cout<<"Dati numarul de ecuatii ";cin>>n; 
+cout<<"Dati matricea A "<<endl; 
+for(i=1;i<=n;i++)
+for(j=1;j<=n;j++)
+{
+cout<<"a["<<i<<"]["<<j<<"]= ";
+cin>>a[i][j];
+}
+cout<<"Dati termenul liber"<<endl;
+for(i=1;i<=n;i++)
+{
+cout<<"b["<<i<<"]= ";
+cin>>b[i];
+}
+for(j=1;j<=n-1;j++)
+{
+iv=j;
+t=1;
+while( (iv<=n) && (t==1) ) 
+if(a[iv][j] == 0) iv=iv+1; 
+else t=0;
+if(t==1)
+{
+cout<<"Determinantul pricipal este nul ";
+exit(0);
+}
+if(j!=iv)
+{
+for(k=j;k<=n;k++)
+{
+temp=a[j][k]; 
+a[j][k]=a[iv][k]; 
+a[iv][k]=temp;
+}
+// schimbam si elementul corespunzator liniei k al termenului liber 
+            temp=b[j];
+b[j]=b[iv];
+b[iv]=temp;
+}
+for(l=j+1;l<=n;l++)
+{
+for(k=j+1;k<=n;k++)
+a[l][k]=a[l][k] - a[j][k] * a[l][j] / a[j][j];
+// calcul pt. termenul liber
+b[l]=b[l] - b[j] * a[l][j] / a[j][j];
+  	}
+}
+if(a[n][n]==0)
+{
+cout<<"Deterninantul principal este nul";
+exit(0);
+}
+// calculul lui xn 
+x[n]=b[n] / a[n][n]; 
+for(i=n-1;i>=1;i--)
+{
+temp = b[i];
+for(j=i+1;j<=n;j++) temp = temp - a[i][j] * x[j];
+x[i] = temp / a[i][i];
+}
+for(i=1;i<=n;i++)
+cout<<"x["<<i<<"]= "<<x[i]<<endl;
+getch();
+return 0;
+}

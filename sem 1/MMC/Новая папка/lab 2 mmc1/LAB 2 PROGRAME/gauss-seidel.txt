@@ -1,0 +1,84 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<stdlib.h>
+#include<conio.h>
+#include<math.h>
+
+using namespace std;
+double a[10][10],x[10],b[10];
+// a este matricea sistemului
+// x vectorul de necunoscute ale sistemului
+// b vectorul de termeni liberi 
+int n,m,j,i,eroare;
+
+void gauss_seidel(double a[10][10], double x[10], int n)
+{
+int imax=20;
+int eps=0.0000000001;
+int i,j,k;
+double t,tt[10];
+// se genereaza elementele rezultate prin impartirea fiecarui elem. de pe linie cu
+// elem. de pe diagonala principala
+for(i=1;i<=n;i++)
+{
+t=-1.0/a[i][i]; 
+tt[i]=b[i]/a[i][i]; 
+for(j=1;j<=n;j++)
+a[i][j]=a[i][j] * t;
+}
+k=0;
+for(i=1;i<=n;i++) b[i]=tt[i];
+do{
+k++; 
+eroare=0.0; 
+for(i=1;i<=n;i++)
+{
+t = tt[i];
+for(j=1;j<=n;j++) t = t + a[i][j] * b[j];
+b[i] = b[i] + t;
+if(b[i] != 0.0) t = t / b[i];
+if(fabs(t)>eroare) eroare = fabs(t);
+}
+}while((eroare<eps) || (k==imax) );
+
+return;
+}
+int main()
+{
+cout<<"Introduceti nr. de linii si de coloane ale matricei sistemului ";
+cin>>n;
+for(i=1;i<=n;i++)
+for(j=1;j<=n;j++)
+{
+cout<<"a["<<i<<","<<j<<"]= ";
+cin>>a[i][j];
+}
+cout<<"Introduceti elementele termenului liber "<<endl;
+for(i=1;i<=n;i++)
+{
+cout<<"b["<<i<<"]= ";
+cin>>b[i];
+}
+cout<<"Sistemul initial este :"<<endl;
+for(i=1;i<=n;i++)
+{
+cout<<a[i][1]<<" x"<<1;
+for(j=2;j<=n;j++)
+cout<<" + "<<a[i][j]<<" x"<<j;
+cout<<" = "<<b[i]<<endl;
+}
+cout<<"are solutiile :"<<endl; 
+gauss_seidel(a,b,n); 
+for(i=1;i<=n;i++)
+cout<<"x["<<i<<"]= "<<b[i]<<endl;
+cout<<"Eroarea relativa maxima este "<<eroare<<endl;
+getch();
+
+}

@@ -1,0 +1,175 @@
+double * gauss(double **a, double *y, int n)
+
+{
+
+double *x, max;
+
+int k, index;
+
+const double eps = 0.00001; // точность
+
+x = new double[n];
+
+k = 0;
+
+while (k < n)
+
+{
+
+//	Поиск строки с максимальным a[i][k] max = abs(a[k][k]);
+index = k;
+
+for (int i = k + 1; i < n; i++)
+
+{
+
+if (abs(a[i][k]) > max)
+
+{
+
+max = abs(a[i][k]); index = i;
+ 
+}
+
+}
+
+//	Перестановка строк if (max < eps)
+{
+
+//	нет ненулевых диагональных элементов
+
+cout << "Решение получить невозможно из-за нулевого столбца "; cout << index << " матрицы A" << endl; return 0;
+
+}
+
+for (int j = 0; j < n; j++)
+
+{
+
+double temp = a[k][j];
+
+a[k][j] = a[index][j];
+
+a[index][j] = temp;
+
+}
+
+double temp = y[k];
+
+y[k] = y[index];
+
+y[index] = temp;
+
+//	Нормализация уравнений for (int i = k; i < n; i++)
+{
+
+double temp = a[i][k];
+
+if (abs(temp) < eps) continue; // для нулевого коэффициента пропустить for (int j = 0; j < n; j++)
+a[i][j] = a[i][j] / temp; y[i] = y[i] / temp;
+
+if (i == k) continue; // уравнение не вычитать само из себя for (int j = 0; j < n; j++)
+a[i][j] = a[i][j] - a[k][j]; y[i] = y[i] - y[k];
+}
+
+k++;
+ 
+}
+
+//	обратная подстановка for (k = n - 1; k >= 0; k--)
+{
+
+x[k] = y[k];
+
+for (int i = 0; i < k; i++) y[i] = y[i] - a[i][k] * x[k];
+
+}
+
+return x;
+
+}
+void Jacobi ( double** A, double* F, int N, double* X)
+
+{
+
+double* TempX = new double[N];
+
+double* TempY = new double[N];
+ 
+double *z = new double[N];
+
+double norm; // норма, определяемая как наибольшая разность компонент столбца иксов соседних итераций. for (int i=0; i<N; i++){
+
+z[i]=A[i][i];
+
+}
+
+//for (int g=0; g<4; g++){
+
+for (int i=0; i<N; i++){
+
+//cout<<"Temp "<<i<<" =";
+
+for (int j=0; j<N; j++){
+
+if(i!=j){
+
+TempX[i]=TempX[i]+(-A[i][j]/z[i]*X[j]);
+
+cout<<-A[i][j]<<"/"<<z[i]<<"*"<<X[j]<<endl;
+
+}
+
+}
+
+//	cout<<"\n";
+
+TempX[i]=TempX[i]+X[i];
+
+}
+
+for (int i=0; i<N; i++){
+
+X[i]=TempX[i];
+
+}
+
+}
+
+void GaussZeidel( double** A, double* F, int N, double* X)
+
+{
+
+double* TempX = new double[N];
+
+double* TempY = new double[N];
+
+double *z = new double[N];
+
+double norm;
+
+for (int i=0; i<N; i++){
+
+z[i]=A[i][i];
+
+}
+
+for (int i=0; i<N; i++){
+
+for (int j=0; j<N; j++){
+
+if(i!=j){
+
+TempX[i]=TempX[i]+(-A[i][j]/z[i]*X[j]);
+
+}
+
+}
+
+TempX[i]=TempX[i]+X[i];
+
+X[i]=TempX[i];
+
+}
+
+}

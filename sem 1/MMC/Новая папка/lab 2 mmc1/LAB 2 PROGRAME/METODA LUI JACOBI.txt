@@ -1,0 +1,67 @@
+
+
+#include <iostream>
+#include<stdlib.h>
+#include<conio.h>
+#include<math.h>
+
+using namespace std;
+double a[10][10],x[10],b[10],temp[10];
+// a este matricea sistemului
+// x vectorul de necunoscute ale sistemului
+// b vectorul de termeni liberi
+// temp un vector pentru calcul al unor valori temporare double q,eps,nb,s;
+// q numar egal cu norma matricei I-A ( adica q = |I - A| )
+// eps eroarea de calcul aproximativ al solutiilor sistemului
+// nb numar egal cu norma vectorului B ( adica nb = |B| )
+int n,m,j,i,iteratii;
+
+int main()
+{
+
+cout<<"Intoduceti nr. de linii si de coloane ale matricei sistemului ";
+cin>>n;
+for(i=1;i<=n;i++)
+for(j=1;j<=n;j++)
+{
+cout<<"a["<<i<<","<<j<<"]= ";
+cin>>a[i][j];
+}
+cout<<"Introduceti elementele termenului liber "<<endl;
+for(i=1;i<=n;i++)
+{
+cout<<"b["<<i<<"]= ";
+cin>>b[i];
+}
+cout<<"Sistemul initial este :"<<endl;
+for(i=1;i<=n;i++)
+{
+cout<<a[i][1]<<" x"<<1;
+for(j=2;j<=n;j++)
+cout<<" + "<<a[i][j]<<" x"<<j;
+cout<<" = "<<b[i]<<endl;
+}
+cout<<"are solutiile :"<<endl;
+double eps=0.0001;
+double nb=1.1;
+double q=0.7;
+
+m=(int)(log(eps * (1-q) / nb ) / log(q) + 1); 
+for(i=1;i<=n;i++) x[i]=0.0; 
+for(iteratii=1;iteratii<=m;iteratii++)
+{
+for(i=1;i<=n;i++)
+{
+double s=0.0;
+for(j=1;j<=n;j++)
+s+=a[i][j] * x[j];
+temp[i]=x[i] - s + b[i];
+}
+for(i=1;i<=n;i++) x[i]=temp[i];
+}
+for(i=1;i<=n;i++)
+cout<<"x["<<i<<"]= "<<x[i]<<endl;
+getch();
+return 0;
+}
+
