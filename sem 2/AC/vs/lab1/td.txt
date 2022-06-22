@@ -1,0 +1,11 @@
+
+În mapa DosBox, este un fișier .bat
+
+
+La sfârșit de fișier, scrii asta :
+
+
+mount c: c:\ c: cd TD td.exe
+
+
+Dar mapa TD trebuie să fie pe Discul C
