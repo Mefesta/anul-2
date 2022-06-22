@@ -1,0 +1,2 @@
+﻿Irvine32.obj : warning LNK4258: directive '/ENTRY:main@0' not compatible with switch '/ENTRY:main'; ignored
+  Project.vcxproj -> C:\Users\gabyb\Desktop\AC\lab3\randomn32\Debug\Project.exe
