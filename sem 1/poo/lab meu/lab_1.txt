@@ -1,0 +1,120 @@
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+using namespace std;
+
+void print(std::vector <int> const &a) {
+   std::cout << "Elementele vectorului: ";
+
+   for(int i=0; i < a.size(); i++)
+   std::cout << a.at(i) << ' ';
+}
+
+int main()
+{
+    size_t size;
+    int suma=0;
+    int num,num2;
+    int pas_6;
+    cout << "Introduceti numarul de elemente din primul vector:";
+    cin >> num;
+    int a[num];
+    for(int i=0;i<num;i++)
+    {
+        cout << "Introduceti elementul "<<(i+1)<<": ";
+        cin >> a[i];
+    }
+
+    vector<int> valerian;
+
+    for (int i = 0; i < num; i++)
+        valerian.push_back(a[i]);
+
+    cout << "Introduceti numarul de elemente din al doile vector:";
+    cin >> num2;
+        int b[num2];
+
+
+    for(int i=0;i<num2;i++)
+    {
+        cout << "Introduceti elementul "<<(i+1)<<": ";
+        cin >> b[i];
+    }
+
+    vector<int> cecan;
+
+    for (int i = 0; i < num2; i++)
+        cecan.push_back(b[i]);
+    while(1)
+    {
+    int choise;
+    int elmnt;
+    cout << "----------------------------------\\_____Menu_____/------------------------------------------" << endl;
+    cout << "1.adaugare  element:" <<endl;
+    cout << "2.eliminare ultimul element:" <<endl;
+    cout << "3.stergere toate elementele:" <<endl;
+    cout << "4.calcularea mediei numerelor pozitive" <<endl;
+     cout << "5.Compararea vectorilor" <<endl;
+     cout << "6.accesarea unui element" <<endl;
+    cout << "7.Iesire" <<endl;
+
+    cin >> choise;
+    if(choise==7)
+        break;
+     switch(choise)
+     {
+         case 1:
+             cout <<"Dati elementul:"<<endl;
+             cin >> elmnt;
+             valerian.push_back(elmnt);
+             print(valerian);
+             cout << endl;
+             break;
+             ;
+         case 2:
+             valerian.pop_back();
+             cout << endl;
+              print(valerian);
+             cout << endl;
+             break;
+             ;
+        case 3:
+            size = valerian.size();
+            for(int i=0;i<size;i++){
+             valerian.pop_back();
+            }
+             cout << endl;
+              print(valerian);
+             cout << endl;
+             break;
+             ;
+        case 4:
+            suma=accumulate(valerian.begin(),valerian.end(),suma);
+            cout <<"suma este: "<<suma <<endl;
+            break;
+        case 5:
+            if(valerian.size()>cecan.size())
+                cout <<"Primul vector este mai mare" <<endl;
+            else if(valerian.size()<cecan.size())
+                cout <<"Primul vector este mai mic";
+            break;
+        case 6:
+            cout <<"Introduceti numarul elementului care doriti sa-l accesati:"<<endl;
+            cin >>pas_6;
+            cout <<valerian.at(pas_6) <<endl;
+            break;
+
+
+    }
+    }
+
+
+
+
+
+
+    return 0;
+}
+
+

@@ -1,0 +1,106 @@
+#include<iostream>
+#include<cstdlib>
+#include <vector>
+using namespace std;
+int op;
+int c = 0;
+int operation()
+
+{
+    cout << "Va rugam sa alegeti una dintre urmatoarele operatiuni" << endl;
+    cout << "1 Adauga un produs" << endl;
+    cout << "2 Vizualiza produsele" << endl;
+    cout << "3 Vinderea unui produs" << endl;
+    cout << "4 Iesirea din MENIU" << endl;
+    cin >> op;
+    return op;
+
+}
+struct products
+{
+    char name[50];
+    int quantity;
+    float price;
+    int cpu_gen;
+    int cpu_frecv;
+
+};
+int main()
+{
+    cout << "Cresterea procentajului preturilor anuale in procentaj" << endl;
+    vector<int> vec = { 6, 8, 10 } ;
+
+    
+    auto it = vec.emplace(vec.begin(), 5);
+
+    cout << "Procentajul anual al crestirii preturilor: ";
+    for (auto it = vec.begin(); it != vec.end(); ++it)
+        cout << *it << " ";
+
+    products arr[100];
+    cout << "Bine ati venit la Managerul de produse pentru computer" << endl << endl;
+begin:
+    operation();
+
+    switch (op)
+    {
+    case 1:
+        cout << "Alegeti sa adaugati un produs" << endl << endl;
+        for (int i = (1 + c); i <= 100; i++)
+        {
+            if (i > 100)
+            {
+                cout << "Depasesti numarul de produse" << endl;
+            }
+            else
+            {
+                cout << "Va rugam sa introduceti numele computerului nr." << i << endl;
+                cin >> arr[i].name;
+                cout << "Acum, va rugam sa introduceti cantitatea de computere-->" << arr[i].name << endl;
+                cin >> arr[i].quantity;
+                cout << "Acum, va rugam sa introduceti pretul computerelor-->" << arr[i].name << endl;
+                cin >> arr[i].price;
+                cout << "Introduceti generarea CPU (de la 1 la 10)-->" << arr[i].name << endl;
+                cin >> arr[i].cpu_gen;
+                cout << "Introduceti frecventa procesorului-->" << arr[i].name << endl;
+                cin >> arr[i].cpu_frecv;
+                cout << "Produsul este adaugat cu succes" << endl << endl;
+                c++;
+                goto begin;
+            }
+        }
+        break;
+
+    case 2:
+
+        cout << "Alege?i sa vizualiza?i produsele" << endl << endl;
+        if (c == 0)
+        {
+            cout << "Nu ave?i inca produse" << endl << endl;
+            goto begin;
+        }
+        else {
+            for (int i = 1; i <= c; i++)
+            {
+
+                cout << "Calculatorul nr." << i << " numele este " << arr[i].name << endl;
+                cout << "Calculatorul nr." << i << " cantitatea este " << arr[i].quantity << endl;
+                cout << "Calculatorul nr." << i << " pre?ul este " << arr[i].price << endl;
+                cout << "Calculatorul nr." << i << " generarea procesorului este " << arr[i].cpu_gen << endl;
+                cout << "Calculatorul nr." << i << " frecven?a procesorului este " << arr[i].cpu_frecv;
+                cout << endl << endl;
+
+            }
+            goto begin;
+        }
+
+        break;
+
+    case 3:
+        cout << "Alege?i sa incheia?i programul" << endl << endl;
+        exit(0);
+
+
+    }
+    return 0;
+}

@@ -1,0 +1,169 @@
+#include <iostream>
+#include <string.h>
+#include <stdio.h>
+#include <cstring>
+using namespace std;
+class iahta{
+public: //declararea variabilelor ca fiinde publice, pentru a pute accesa din alta parte a progam.
+    char *motor;
+    float hp;
+    char *denumire;
+    float masa;
+    iahta():motor(),hp(),denumire(),masa(){}; //CONSTR. IMPLICID iahta(char *denumire,int *hp,char *motor,int masa){ // CONSTR. EXPLICIT motor = new char; motor = new char[strlen(motor)+1];
+    iahta (char *denumire,int *hp,char *motor,int masa){ motor = new char; motor = new char[strlen(motor)+1];
+        strcpy(motor,motor);
+        strcpy(motor,motor); //alocarea de memorie p/u un char hp = h
+        denumire = new char[strlen(denumire)+1]; //alocare p/u denumire
+        strcpy(denumire,denumire); //copie din denum in denumire masa=masa;
+    };
+    iahta(iahta &obj){ //CONSTR. DE COPIERE
+        motor = new char; strcpy(motor,obj.motor); hp=obj.hp;
+        denumire = new char[strlen(denumire)+1]; strcpy(denumire,obj.denumire);
+        masa=obj.masa;
+    };
+    ~iahta(){	// DESTUCTOR
+        delete motor; motor=NULL;	//sterge pointerul mot;
+        hp=0;
+        delete denumire; denumire=NULL;
+        masa=0;	//masa i se atribuie (zero)
+    };
+};
+istream & operator>>(istream &in, iahta &obj){ char buf[100];
+    cout<<"Denumire: ";	in>>buf;
+    obj.denumire = new char [strlen(buf)+1];
+    strcpy(obj.denumire,buf);
+    cout<<"Cai puteri: "; in>>obj.hp;
+    cout<<"Motor: ";	obj.motor = new char;
+    in>>obj.motor;
+    cout<<"Masa: "; in>>obj.masa;
+    return in;
+};
+class motocicleta: public iahta{
+    char *model;
+public:
+    motocicleta(){model=NULL; };
+    motocicleta(char *den,int hp,char *motor,int masa,char *model){
+        iahta::denumire = new char[strlen(den)+1];
+        strcpy(iahta::denumire,den);
+        iahta::hp = hp;
+        iahta::motor = new char;
+        strcpy(iahta::motor,motor);
+        iahta::masa = masa;
+        model = new char[strlen(model)+1];
+        strcpy(model,model);
+    };
+    friend istream & operator>>(istream &in, motocicleta &obj);
+    friend ostream & operator<<(ostream &out,motocicleta &obj);
+};
+istream & operator>>(istream &in, motocicleta & obj){
+    char buf[50];
+    cout<<"Denumirea:	"; in>>buf;
+    obj.denumire = new char[strlen(buf)+1];
+    strcpy(obj.denumire,buf);
+    cout<<"hp c/p: "; in>>obj.hp;
+    cout<<"Motorul: "; in>>buf;
+    obj.motor = new char[strlen(buf)+1];
+    strcpy(obj.motor,buf);
+    cout<<"Greutatea (kg): "; in>>obj.masa;
+    cout<<"Modelul:"; in>>buf;
+    obj.model = new char[strlen(buf)+1];
+    strcpy(obj.model,buf);
+    return in; };
+ostream & operator<<(ostream &out, motocicleta &obj){
+//*********SUPRAINCARCAREA OPERATOR DE IESIRE COUT << ostream & operator<<(ostream &out, motocicleta &obj){
+    out<<"Denumire:	"; out<<obj.denumire<<endl;
+    out<<"hp:	"; out<<obj.hp<<endl;
+    out<<"Motorul:	"; out<<obj.motor<<endl;
+    out<<"Greutatea:	"; out<<obj.masa<<endl;
+    out<<"Modelul:	"; out<<obj.model<<endl;
+    return out;
+};
+class motocicleta_de_apa: public iahta{
+    float viteza;
+public:
+    motocicleta_de_apa(){viteza=0;};
+    motocicleta_de_apa(char *den,int hp,char *motor,int masa, int viteza){ iahta::denumire = new char[strlen(den)+1];
+        strcpy(iahta::denumire,den);
+        iahta::hp = hp;
+        iahta::motor = new char;
+        strcpy(iahta::motor,motor);
+        iahta::masa = masa;
+        viteza = viteza;
+    };
+    friend istream & operator>>(istream &, motocicleta_de_apa &);
+    friend ostream & operator<<(ostream &, motocicleta_de_apa &);
+};
+istream & operator>>(istream &in, motocicleta_de_apa &obj){ char buf[50];
+    cout<<"Denumirea:	"; in>>buf;
+    obj.denumire = new char[strlen(buf)+1];
+    strcpy(obj.denumire,buf);
+    cout<<"hp:  "; in>>obj.hp;
+    cout<<"Motorul:	"; in>>buf;
+    obj.motor = new char;
+    strcpy(obj.motor,buf);
+    cout<<"Greutatea (kg): "; in>>obj.masa;
+    cout<<"Viteza max pe apa:"; in>>obj.viteza;
+    return in;
+};
+ostream & operator<<(ostream &out,motocicleta_de_apa &obj){
+    out<<"Denumirea:	"; out<<obj.denumire<<endl;
+    out<<"hp:	"; out<<obj.hp<<endl;
+    out<<"Motor:	"; out<<obj.motor<<endl;
+    out<<"Greutatea:	"; out<<obj.masa<<endl;
+    out<<"Viteza max pe apa:"; out<<obj.viteza<<endl;
+    return out;
+};
+int main(void){
+    char selection;
+    cout<<"1 "; cout<<"- Introdu Iahta  "<<endl;
+    cout<<"2 "; cout<<"- Introdu motocicleta	"<<endl;
+    cout<<"3 "; cout<<"- Introdu motocicleta de apa"<<endl;
+    cout<<"4 "; cout<<"- Iesire"<<endl;
+    cin >> selection;
+    switch (selection ) {
+
+        case '1' : {
+            iahta a;
+            cin>>a;
+            
+
+        }
+            do {
+                cout << '\n' << "...\n";
+            } while (cin.get() != '\n');
+
+        case '2' : {
+
+                motocicleta b;
+            cin>>b;
+            cout<<b;
+        }
+
+        case '3' : {
+
+                motocicleta_de_apa c;
+            cin>>c;
+            cout<<c;
+        }
+            do {
+                cout << '\n' << "...\n";
+            } while (cin.get() != '\n');
+
+        case '4' : {
+            
+                exit(1);
+
+        }
+
+        default : {
+            cout<<"\n Invalid selection";
+
+            cout<<"\n";
+            getchar();
+        }
+            break;
+
+    }
+    }
+
+

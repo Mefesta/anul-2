@@ -1,0 +1,96 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Lines {
+
+  public:
+  Lines() {
+
+  }
+
+  public:
+  double a,b,x,y;
+  virtual bool fx(){return 0;};
+
+};
+
+class StraightLine:public Lines{
+  //y = ax + b;
+  public:
+  StraightLine(double x,double y,double a,double b) {
+    this->a = a;
+    this->b = b;
+    this->x = x;
+    this->y = y;
+  }
+  bool fx() {
+    if(y == a * x + b) {
+      cout << "\n este linie";
+      return true;
+    } else {
+      cout << "\n nu este linie";
+      return false;
+    }
+  }
+  
+
+};
+
+class Ellipse:public Lines{
+  //x^2/a^2 + y^2/b^2 = 1
+  public:
+    Ellipse(double x,double y,double a,double b) {
+    this->a = a;
+    this->b = b;
+    this->x = x;
+    this->y = y;
+  }
+  bool fx() {
+    if(pow(x,2)/pow(a,2) + pow(y,2)/pow(b,2) == 1) {
+      cout << "\n este elipsa";
+      return true;
+    } else {
+      cout << "\n nu este elipsa";
+    return false;
+    }
+  }
+
+};
+class Hyperbola:public Lines{
+  //x^2/a^2 - y^2/b^2 = 1
+  public:
+    Hyperbola(double x,double y,double a,double b) {
+    this->a = a;
+    this->b = b;
+    this->x = x;
+    this->y = y;
+  }
+  bool fx() {
+    if((pow(x,2)/pow(a,2) - pow(y,2)/pow(b,2)) == 1) {
+      cout << "\n este hiperbola";
+      return true;
+    } else {
+      cout << "\n nu este hiperbola";
+    return false;
+    }
+  }
+
+};
+
+
+int main() {
+  Lines **a;
+  for(int i = 0; i < 3; i++) {
+    a[i] = new Lines();
+  }
+  StraightLine dreapta(1,2,1,1);
+  Ellipse elips(1,2,3,4);
+  Hyperbola hiperbola(1,1,1,1);
+  a[0] = &dreapta;
+  a[1] = &elips;
+  a[2] = &hiperbola;
+  a[0]->fx();
+  a[1]->fx();
+  a[2]->fx();
+} 

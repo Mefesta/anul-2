@@ -1,0 +1,203 @@
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+typedef struct products {
+    char name[50];
+    int quantity;
+    float price;
+    int cpu_gen;
+    int cpu_frecv;
+}products;
+
+products *psoft;
+int n;
+void aloc_memory() {
+    cout << "\n-----------------------------------" ;
+    cout << "\n>> Introdu numarul de calculatoare:";
+    cin >> n;
+    if(n > 1) {
+        psoft = new products[n];
+    } else
+        cout << ">> Nu ai introdus corect numarul de elemente  <<";
+    
+}
+
+void scan_product() {
+  
+    for(int i = 0; i < n; i++) {
+        cout << "\nVa rugam sa introduceti numele computerului :";
+        cin.getline(psoft[i].name,50);
+        cin.getline(psoft[i].name,50);
+        cout << "\nAcum, va rugam sa introduceti cantitatea de calculatoare:";
+        cin >> psoft[i].quantity;
+        cout << "\nAcum, va rugam sa introduceti pretul computerelor:";
+        cin >> psoft[i].price;
+        cout << "\nIntroduceti generarea CPU (de la 1 la 10):";
+        cin >> psoft[i].cpu_gen;
+        cout << "\nIntroduceti frecventa procesorului:";
+        cin >> psoft[i].cpu_frecv;
+    
+    }
+}
+void print_elements () {
+    for (int i = 0; i < n; i++ ) {
+        cout << "\n>> |Denumirea " << i + 1 << " :" << psoft[i].name      ;
+        cout << "\n>> |Cantitatea " << i + 1 << " :" << psoft[i].quantity ;
+        cout << "\n>> |Pretul " << i + 1 << " :" << psoft[i].price        ;
+        cout << "\n>> |CPU " << i + 1 << " :" << psoft[i].cpu_gen         ;
+        cout << "\n>> |Frecventa " << i + 1 << " :" << psoft[i].cpu_frecv ;
+    }
+}
+void sort_price() {
+    for(int i = 0; i < n; i++) {
+        for(int j = i + 1; j < n; j++)
+        if(psoft[i].price > psoft[j].price) {
+            products temp = psoft[i];
+            psoft[i] = psoft[j];
+            psoft[j] = temp;
+            
+        }
+    }
+}
+void modif_element() {
+    char name[50];
+    cout << "\n>> Introdu numele computerului:" ;
+    cin.getline(name,50);
+    cin.getline(name,50);
+    for (int i = 0; i < n; i ++) {
+        if(strcmp(name,psoft[i].name) == 0){
+            cout << ">> Introdu numele:";
+            cin.getline(psoft[i].name, 50);
+            cout << ">>Introdu Cantitatea:";
+            cin >> psoft[i].quantity;
+            cout << "\n>> Introdu pretul:";
+            cin >> psoft[i].price;
+            cout << "\n>> Introdu generarea CPU:";
+            cin >> psoft[i].cpu_gen;
+            cout << "\n>> Introdu Frecventa:";
+            cin >> psoft[i].cpu_frecv;
+        }
+    }
+}
+
+void search_element_name() {
+    char name[50];
+    cout << "\n__________________________________________________" ;
+    cout << " \n>>Introdu denumirea calculatorului care il cauti:";
+    cin.getline(name,50);
+    cin.getline(name,50);
+    for(int i = 0; i < n; i++) {
+        if((strcmp(name,psoft[i].name) == 0)) {
+            cout << "\n>> Denumirea " << i + 1 << " :" << psoft[i].name;
+            cout << "\n>> Cantitatea " << i + 1 << " :" << psoft[i].quantity;
+            cout << "\n>> Pretul " << i + 1 << " :" << psoft[i].price;
+            cout << "\n>> CPU " << i + 1 << " :" << psoft[i].cpu_gen;
+            cout << "\n>> Frecventa " << i + 1 << " :" << psoft[i].cpu_frecv;
+        }
+    }
+}
+
+void search_element_price() {
+    int price_p;
+    cout << "\n__________________" ;
+    cout << "\n>> Introdu pretul:";
+    cin >> price_p;
+    for(int i = 0; i < n; i++) {
+        if(price_p == psoft[i].price) {
+            cout << ">> |Denumirea" << i + 1 << ":" << psoft[i].name;
+            cout << ">> |Cautarea" << i + 1 << ":" << psoft[i].quantity;
+            cout << ">> |Pretul" << i + 1 << ":" << psoft[i].price;
+            cout << ">> |CPU" << i + 1 << ":" << psoft[i].cpu_gen;
+            cout << ">> |Frecventa" << i + 1 << ":" << psoft[i].cpu_frecv;
+        }
+    }
+}
+
+void menu() {
+    cout << "-------------------------------------------------------" << endl;
+    cout << ">>Va rugam sa alegeti una dintre urmatoarele operatiuni" << endl;
+    cout << "-------------------------------------------------------" << endl;
+    cout << "|1| |Alocam memorie                   |" << endl;
+    cout << "|2| |Introducera datelor              |" << endl;
+    cout << "|3| |Afisarea datelor                 |" << endl;
+    cout << "|4| |Sortare dupa pret                |" << endl;
+    cout << "|5| |Cautarea unui element dupa nume  | " << endl;
+    cout << "|6| |Cautarea unui element dupa pret  |" << endl;
+    cout << "|7| |Modificarea unui element         | " << endl;
+    cout << "|8| |Eliberarea momorie               | " << endl;
+    cout << "|0| |EXIT                             | " << endl;
+    cout << "-------------------------------------------------------" << endl;
+ }
+
+void delet_memory() {
+    delete[] psoft;
+    psoft = nullptr;
+}
+int main(int argc, const char * argv[]) {
+    int a;
+    menu();
+    while(1) {
+        cout << "\n-----------------" ;
+        cout << "\nIntrodu un numar:" ;
+        cin >> a;
+        switch (a) {
+            case 1:
+            cout << "\nMemoria a fost alocata" ;
+                aloc_memory();
+                break;
+                
+            case 2:
+            cout << ">> Introducerea datelor" ;
+            cout << "\n______________________" ;
+                scan_product();
+                break;
+            
+            case 3:
+                cout << "\n>> Afisarea calculatoarelor:" ;
+                cout << "\n______________________________" ;
+                print_elements();
+                break;
+            
+            case 4:
+                 cout << "Sortarea dupa pret a fost efectuata cu success";
+            sort_price();
+                
+                break;
+            
+            case 5:
+            cout << "\nCautarea unui element dupa nume" ;
+           cout << "\n__________________________________" ;
+                search_element_name();
+                break;
+            case 6:
+                cout << "\nCautarea unui element dupa pret" ;
+           cout << "\n____________________________________" ;
+                search_element_price();
+                break;
+            case 7:
+                cout << "\nModificarea datelor unui calculator" ;
+                cout << "\n____________________________________" ;
+                modif_element();
+                break;
+                case 8:
+                cout << "\n______________________________________" ;
+                cout << "\nMemoria a fost eliberata cu success" ;
+                delet_memory();
+                break;
+            
+            case 0:
+                cout << "Ati esit cu success  -_-";
+                exit(0);
+                break;
+            
+            default:
+                cout << "____________________________________" ;
+                cout << "Eroare nu ai introdus numarul corect.";
+                exit(0);
+        }
+    }
+
+    return 0;
+}
