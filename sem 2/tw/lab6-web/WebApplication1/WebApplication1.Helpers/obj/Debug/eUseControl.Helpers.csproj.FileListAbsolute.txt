@@ -1,0 +1,22 @@
+H:\univer\PJ\eUseControl\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.dll
+H:\univer\PJ\eUseControl\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.pdb
+H:\univer\PJ\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.dll
+H:\univer\PJ\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.pdb
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.dll
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.pdb
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.csproj.AssemblyReference.cache
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.csproj.CoreCompileInputs.cache
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.dll
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.pdb
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.csproj.AssemblyReference.cache
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.pdb
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.csproj.AssemblyReference.cache
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.pdb

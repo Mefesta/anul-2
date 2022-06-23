@@ -1,0 +1,202 @@
+﻿
+@{
+    ViewBag.Title = "gallery";
+}
+
+@model WebApplication1.Models.Images.PImageData
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2 pt-70">
+                            <h2>Gallery</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Gallery Area Start -->
+    <div class="gallery-area">
+        <div class="container-fluid ">
+            <div class="row">  
+                    @foreach (var @img in Model.ImageList)
+                    {
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 ">
+                                <div class="box snake mb-30">
+                                    ;<div class="gallery-img big-img" style="background-image: url(@Url.Content(@img.ImagePath))" ></div>
+                                    <div class="overlay">
+                                        <div class="overlay-content">
+                                            <h3>Muscle gaining </h3>
+                                            <a href="@Url.Action("Gallery", "")"><i class="ti-plus"></i></a>
+                                        </div>
+                                        <div class="Image__item__text">
+                                            <h5><a href="#">@img.Title</a></h5>
+                                            <ul>            
+                                                <a href="@Url.Action("ImageDelete", "Gallery", new { ImageID = @img.ImageID})">Delete</a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                     }
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img" style="background-image: url(../Images/gallery/gallery1.png);"></div>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Muscle gaining </h3>
+                                <a href="@Url.Action("gallery","")"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img" style="background-image: url(../Images/gallery/gallery2.png);"></div>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Muscle gaining </h3>
+                                <a href="@Url.Action("gallery","")"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img" style="background-image: url(../Images/gallery/gallery3.png);"></div>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Muscle gaining </h3>
+                                <a href="@Url.Action("gallery","")"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img" style="background-image: url(../Images/gallery/gallery4.png);"></div>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Muscle gaining </h3>
+                                <a href="@Url.Action("gallery","")"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img" style="background-image: url(../Images/gallery/gallery5.png);"></div>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Muscle gaining </h3>
+                                <a href="@Url.Action("gallery","")"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                    <div class="box snake mb-30">
+                        <div class="gallery-img big-img" style="background-image: url(../Images/gallery/gallery6.png);"></div>
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Muscle gaining </h3>
+                                <a href="@Url.Action("gallery","")"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @{if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
+            {
+    @Html.ValidationSummary(true) using (Html.BeginForm("Add", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+    <div class="row text-center p-4">
+        <div class="col-md-2">
+
+        </div>
+
+        <div class="col-md-4">
+            @Html.AntiForgeryToken()
+            @Html.LabelFor(model => model.Image.Title, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Image.Title, new
+            {
+                placeholder = "...",
+                value = "",
+                name = "Title",
+                id = "Title",
+                @class = "form-control",
+            })
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="col-md-3">
+                <input type="file" name="ImageFile" required>
+            </div>
+        </div>
+    </div>
+
+                        <div class="col-md-12 text-center">
+                            <input type="submit" value="Add" class="btn btn-outline-light" />
+                        </div> }
+                                    } }
+    </div>
+    <!-- Gallery Area End -->
+    <!-- ? services-area -->
+    <section class="services-area">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services mb-40">
+                        <div class="features-icon">
+                            <img src="../Images/icon/icon1.svg" alt="">
+                        </div>
+                        <div class="features-caption">
+                            <h3>Location</h3>
+                            <p>You’ll look at graphs and charts in Task One, how to approach </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services mb-40">
+                        <div class="features-icon">
+                            <img src="~/Images/icon/icon2.svg" alt="">
+                        </div>
+                        <div class="features-caption">
+                            <h3>Phone</h3>
+                            <p>(90) 277 278 2566</p>
+                            <p>  (78) 267 256 2578</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services mb-40">
+                        <div class="features-icon">
+                            <img src="~/Images/icon/icon3.svg" alt="">
+                        </div>
+                        <div class="features-caption">
+                            <h3>Email</h3>
+                            <p>jacson767@gmail.com</p>
+                            <p>contact56@zacsion.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!-- Scroll Up -->
+<div id="back-top">
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+

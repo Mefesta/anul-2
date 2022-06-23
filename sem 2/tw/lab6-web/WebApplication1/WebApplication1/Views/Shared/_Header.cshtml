@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "_Header";
+}
+
+<header>
+    <!-- Header Start -->
+    <div class="header-area header-transparent">
+        <div class="main-header header-sticky">
+            <div class="container-fluid">
+                <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="@Url.Action("","")"> <img src="~/Images/logo/logo.png" alt=""></a>
+                    </div>
+                    <!-- Main-menu -->
+                    <div class="main-menu f-right d-none d-lg-block">
+                        <nav>
+                            <ul id="navigation">
+
+                                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                <li><a href="@Url.Action("About", "Home")">About</a></li>
+                                <li><a href="@Url.Action("Courses","Home")">Courses</a></li>
+                                <li><a href="@Url.Action("Index","Gallery")">Gallery</a></li>
+
+
+                                <li>
+                                    <a href="@Url.Action("Blog","Home")">Blog</a>
+                                    <ul class="submenu">
+                                        <li><a href="@Url.Action("Blog","Home")">Blog</a></li>
+                                        <li><a href="@Url.Action("Blog_details","Home")">Blog Details</a></li>
+                                        <li><a href="@Url.Action("Elements","Home")">Elements</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="@Url.Action("Index","Login")">Login</a></li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                    <!-- Header-btn -->
+                    
+                    <div class="header-btns d-none d-lg-block f-right">
+                        
+                        <a href=@Url.Action("Contact","Home") class="btn">Contact me</a>
+
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+</header>
+<!-- Scroll Up -->
+<div id="back-top">
+    <a title="Go to Top" href=@Url.Action("","")> <i class="fas fa-level-up-alt"></i></a>
+</div>

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using System.Web.Optimization
+@model WebApplication1.Models.UserRegister
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup</title>
+    <link rel="stylesheet" href="~/Vendors/Css/signup-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="background">
+            <div class="text">
+                <h1>Signup</h1>
+                <p>Have Account? <a href="@Url.Action("Index","Login")">Login</a></p>
+            </div>
+            <div class="box">
+                @Html.ValidationSummary(true)
+                @using (Html.BeginForm("Index", "Register", FormMethod.Post, new { @id = "RegisterForm" }))
+                {
+            @Html.AntiForgeryToken()
+                <form class="form">
+                    @Html.LabelFor(m => m.Credential, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Credential, new
+               {
+                   placeholder = "Gabriel",
+                   title = "Please enter you username",
+                   value = "",
+                   name = "username",
+                   id = "username",
+                   @class = "form-control"
+               })
+                    <span class="help-block small">Your unique username to app</span>
+
+                    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Email, new
+               {
+                   @class = "form-control",
+                   type = "example@gmail.com ",
+                   title = "Your email",
+                   value = "",
+                   name = "email",
+                   id = "email"
+               })
+                    <span class="help-block small">Your email</span>
+                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Password, new
+               {
+                   @class = "form-control",
+                   type = "password",
+                   title = "Please enter your password",
+                   placeholder = "******",
+                   value = "",
+                   name = "password",
+                   id = "password"
+               })
+                    <span class="help-block small">Your strong password</span>
+                    <input type="submit" class="button" value="Register">
+                </form>
+                }
+            </div>
+        </div>
+    </main>
+</body>
+</html>

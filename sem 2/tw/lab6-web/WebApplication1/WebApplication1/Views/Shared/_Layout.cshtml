@@ -1,0 +1,79 @@
+﻿
+@using System.Web.Optimization;
+
+    <!doctype html>
+    <html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Gym trainer | Template </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="@Url.Action("manifest", "")" href="site.webmanifest">
+        <link rel="shortcut icon" type="~/image/x-icon" href="~/Images/favicon.ico">
+
+        <!-- CSS here -->
+        @Styles.Render("~/bundles/bootstrap/css")
+        @Styles.Render("~/bundles/owl.carousel/css")
+        @Styles.Render("~/bundles/slicknav/css")
+        @Styles.Render("~/bundles/flaticon/css")
+        @Styles.Render("~/bundles/gijgo/css")
+        @Styles.Render("~/bundles/animate/css")
+        @Styles.Render("~/bundles/animated-headline/css")
+        @Styles.Render("~/bundles/magnific-popup/css")
+        @Styles.Render("~/bundles/fontawesome-all/css")
+        @Styles.Render("~/bundles/themify-icons/css")
+        @Styles.Render("~/bundles/slick/css")
+        @Styles.Render("~/bundles/nice-select/css")
+        @Styles.Render("~/bundles/style/css")
+
+    </head>
+    <!-- Scroll Up -->
+    <body class="black-bg">
+        <div id="back-top">
+            <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+        </div>
+
+        @Html.Partial("_Header")
+
+        @RenderBody()
+
+        @Html.Partial("_Footer")
+
+        <!-- JS here -->
+        @Scripts.Render("~/bundles/modernizr-3.5.0/js")
+        <!-- Jquery, Popper, Bootstrap -->
+        @Scripts.Render("~/bundles/jquery-1.12.4/js")
+        @Scripts.Render("~/bundles/popper/js")
+        @Scripts.Render("~/bundles/bootstrap/js")
+        <!-- Jquery Mobile Menu -->
+        @Scripts.Render("~/bundles/jquery.slicknav/js")
+        <!-- Jquery Slick , Owl-Carousel Plugins -->
+        @Scripts.Render("~/bundles/owl.carousel/js")
+        @Scripts.Render("~/bundles/slick/js")
+        <!-- One Page, Animated-HeadLin -->
+        @Scripts.Render("~/bundles/wow/js")
+        @Scripts.Render("~/bundles/animated.headline/js")
+        @Scripts.Render("~/bundles/jquery.magnific-popup/js")
+        <!-- Date Picker -->
+        @Scripts.Render("~/bundles/gijgo/js")
+        <!-- Nice-select, sticky -->
+        @Scripts.Render("~/bundles/jquery.nice-select/js")
+        @Scripts.Render("~/bundles/jquery.sticky/js")
+        <!-- counter , waypoint,Hover Direction -->
+        @Scripts.Render("~/bundles/jquery.counterup/js")
+        @Scripts.Render("~/bundles/waypoints/js")
+        @Scripts.Render("~/bundles/jquery.countdown/js")
+        @Scripts.Render("~/bundles/hover-direction-snake/js")
+        <!-- contact js -->
+        @Scripts.Render("~/bundles/contact/js")
+        @Scripts.Render("~/bundles/jquery.form/js")
+        @Scripts.Render("~/bundles/jquery.validate/js")
+        @Scripts.Render("~/bundles/mail-script/js")
+        @Scripts.Render("~/bundles/jquery.ajaxchimp/js")
+        <!-- Jquery Plugins, main Jquery -->
+        @Scripts.Render("~/bundles/plugins/js")
+        @Scripts.Render("~/bundles/main/js")
+    </body>
+</html>
+

@@ -1,0 +1,6 @@
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Helpers\bin\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Helpers\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Helpers\obj\Debug\WebApplication1.Helpers.csproj.AssemblyReference.cache
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Helpers\obj\Debug\WebApplication1.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Helpers\obj\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Helpers\obj\Debug\eUseControl.Helpers.pdb

@@ -1,0 +1,18 @@
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\WebApplication1.Domain\bin\Debug\eUseControl.Domain.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\WebApplication1.Domain\bin\Debug\eUseControl.Domain.pdb
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\WebApplication1.Domain\bin\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\WebApplication1.Domain\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\WebApplication1.Domain.csproj.AssemblyReference.cache
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\WebApplication1.Domain.csproj.CoreCompileInputs.cache
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\WebApplication1.Domain.csproj.CopyComplete
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\eUseControl.Domain.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\eUseControl.Domain.pdb
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Domain\bin\Debug\eUseControl.Domain.dll
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Domain\bin\Debug\eUseControl.Domain.pdb
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Domain\bin\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Domain\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\WebApplication1.Domain.csproj.AssemblyReference.cache
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\WebApplication1.Domain.csproj.CoreCompileInputs.cache
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\WebApplication1.Domain.csproj.CopyComplete
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\eUseControl.Domain.dll
+C:\Users\gabyb\Desktop\Новая папка (5)\WebApplication1\WebApplication1\WebApplication1.Domain\obj\Debug\eUseControl.Domain.pdb

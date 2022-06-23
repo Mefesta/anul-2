@@ -1,0 +1,68 @@
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csprojResolveAssemblyReference.cache
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.dll.config
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.dll
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.pdb
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.dll
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.dll
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.dll
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.pdb
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.pdb
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.xml
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.dll
+H:\univer\PJ\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.pdb
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.dll.config
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.dll
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.pdb
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\AutoMapper.dll
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.dll
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.dll
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.pdb
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.pdb
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\AutoMapper.xml
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.AssemblyReference.cache
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.CopyComplete
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.dll
+D:\Program Files (x86)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.pdb
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.dll.config
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.dll
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.pdb
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\AutoMapper.dll
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.dll
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.pdb
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\AutoMapper.xml
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.CopyComplete
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.dll
+C:\Users\gabyb\Desktop\Новая папка (2)\eUseControl (23.03)\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.pdb
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.dll.config
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.pdb
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\AutoMapper.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.pdb
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\AutoMapper.xml
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.CopyComplete
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.dll
+C:\Users\gabyb\Desktop\lab 4\WebApplication1\WebApplication1\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.pdb
